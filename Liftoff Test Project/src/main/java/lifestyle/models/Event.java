@@ -1,4 +1,4 @@
-package lifestyle.data;
+package lifestyle.models;
 
 public class Event {
 
