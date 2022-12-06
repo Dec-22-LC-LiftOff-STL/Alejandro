@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-// Chapter 19.5 Filtering Requests in Spring.
+
 public class AuthenticationFilter extends HandlerInterceptorAdapter {
 
     @Autowired
@@ -64,7 +64,5 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
         response.sendRedirect("/login");
         return false;
     }
-
-
 
 }
