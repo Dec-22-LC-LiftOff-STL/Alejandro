@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body class="container body-content">
+
+
+<form method="post">
+    <div class="form-group">
+        <label th:for="username">Username
+            <input class="form-control" th:field="${loginFormDTO.username}">
+        </label>
+        <p class="error" th:errors="${loginFormDTO.username}" style="color:red;"></p>
+    </div>
+    <div class="form-group">
+        <label>Password
+            <input class="form-control" th:field="${loginFormDTO.password}" type="password">
+        </label>
+        <p class="error" th:errors="${loginFormDTO.password}" style="color:red;"></p>
+    </div>
+    <br>
+    <input type="submit" class="btn btn-success" value="Log In" />
+</form>
+<br>
+<p>Don't have an account? <a href="/register">Register for one.</a></p>
+
+</body>
+</html>
