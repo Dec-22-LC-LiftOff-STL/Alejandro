@@ -3,7 +3,7 @@ package lifestyle.controllers;
 import lifestyle.data.EventRepository;
 import lifestyle.models.Event;
 import lifestyle.models.User;
-import lifestyle.models.data.UserRepository;
+import lifestyle.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,7 +28,7 @@ public class EventController {
 
     @Autowired
     private AuthenticationController authenticationController;
-    
+
     @GetMapping
     public String displayEvents(Model model, HttpServletRequest request) {
         User theUser = authenticationController.getUserFromSession(request.getSession());

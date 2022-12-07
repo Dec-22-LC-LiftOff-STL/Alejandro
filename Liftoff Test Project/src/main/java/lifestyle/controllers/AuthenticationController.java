@@ -1,7 +1,7 @@
 package lifestyle.controllers;
 
 import lifestyle.models.User;
-import lifestyle.models.data.UserRepository;
+import lifestyle.data.UserRepository;
 import lifestyle.models.dto.LoginFormDTO;
 import lifestyle.models.dto.RegisterFormDTO;
 
