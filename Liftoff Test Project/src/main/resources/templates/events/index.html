@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h2 class="text-center">Event Board</h2>
+
+<!--TODO: Update display from table to cards. 4 cards per row?-->
+<!--TODO: Make it able for user to add an image-->
+
+<table class="table table-striped">
+    <thead>
+    <tr class="text-center">
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+
+    <tr class="text-center" th:each="event : ${events}">
+        <td th:text="${event.title}"></td>
+        <td th:text="${event.description}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
