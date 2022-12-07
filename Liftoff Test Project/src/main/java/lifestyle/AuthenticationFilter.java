@@ -2,7 +2,7 @@ package lifestyle;
 
 import lifestyle.controllers.AuthenticationController;
 import lifestyle.models.User;
-import lifestyle.models.data.UserRepository;
+import lifestyle.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
