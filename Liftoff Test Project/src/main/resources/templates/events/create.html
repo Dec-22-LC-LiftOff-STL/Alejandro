@@ -7,9 +7,10 @@
 </head>
 <body class="container">
 
+<h2 align="center">Create some history!</h2>
+<nav th:replace="fragments :: nav-list"></nav>
 
 <form method="post" align="center">
-    <h4>Create some history!</h4>
     <div class="form-group">
         <input placeholder="Enter Title" th:field="${event.title}">
     </div>
