@@ -1,9 +1,12 @@
 package lifestyle.models;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
 
 @Entity
 public class Event extends AbstractEntity {
@@ -17,6 +20,9 @@ public class Event extends AbstractEntity {
 
     @ManyToOne
     private User user;
+
+    @DateTimeFormat
+    private LocalDate date = LocalDate.now();
 
     public Event() {
     }
@@ -49,5 +55,13 @@ public class Event extends AbstractEntity {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
