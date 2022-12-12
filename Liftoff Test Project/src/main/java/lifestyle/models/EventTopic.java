@@ -1,10 +1,5 @@
 package lifestyle.models;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
-import java.util.List;
-
 public enum EventTopic {
 
         SLEEP("Sleep"),
@@ -23,4 +18,3 @@ public enum EventTopic {
         return name;
     }
 }
-
