@@ -8,13 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("events")
@@ -30,9 +28,7 @@ public class EventController {
     private AuthenticationController authenticationController;
 
     @GetMapping
-    public String displayEvents(Model model, HttpServletRequest request) {
-        User theUser = authenticationController.getUserFromSession(request.getSession());
-//        model.addAttribute("events", theUser.getEvents());
+    public String displayEvents(Model model) {
         model.addAttribute("events", eventRepository.findAll());
         return "events/index";
     }
@@ -49,6 +45,7 @@ public class EventController {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Create history!");
+            // TODO: Remove line below before project demo. Only used for testing.
             model.addAttribute("showErrors", errors.getAllErrors());
             return "events/create";
         }
@@ -59,6 +56,4 @@ public class EventController {
     // TODO: deleteEvent
 
     // TODO: processDeleteEvent
-
-    // TODO: editEvent
 }
