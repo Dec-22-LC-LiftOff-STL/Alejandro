@@ -13,6 +13,31 @@
     <div class="form-group">
         <input placeholder="Enter Description" th:field="${event.description}">
     </div>
+<!--    <div class="form-group">             &lt;!&ndash;Radio version of topics&ndash;&gt;-->
+<!--        <input type="radio" id="sleep" name="topic" value="${EventTopic.sleep}">-->
+<!--        <label for="sleep">Sleep</label>-->
+<!--        <input type="radio" id="exercise" name="topic" value="${EventTopic.exercise}">-->
+<!--        <label for="exercise">Exercise</label>-->
+<!--        <input type="radio" id="diet" name="topic" value="${EventTopic.diet}">-->
+<!--        <label for="diet">Diet</label>-->
+<!--        <input type="radio" id="Work" name="topic" value="${EventTopic.work}">-->
+<!--        <label for="work">Work</label>-->
+<!--        <input type="radio" id="Other" name="topic" value="${EventTopic.other}">-->
+<!--        <label for="other">Other</label><br>-->
+<!--        <div th:each="topic : ${topics}">-->    <!--DRY Attempt at Radio Topics-->
+<!--        <input type="radio" th:value="${topic}">-->
+<!--        <label th:field="${topic}"></label>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="form-group">             <!--Dropdown version of topics-->
+        <label>Topic</label>
+        <select th:field="${event.topic}">
+            <option th:each="topic : ${topics}"
+                    th:value="${topic}"
+                    th:text="${topic.name}"
+            ></option>
+        </select>
+    </div>
     <div>
         <input type="submit" class="btn btn-primary">
     </div>

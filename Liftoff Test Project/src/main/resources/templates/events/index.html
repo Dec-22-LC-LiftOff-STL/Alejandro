@@ -14,37 +14,12 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title" th:text="${event.title}"></h4>
-                <button type="button" id="arrowbtn1">
-                    <span id="span1">Read</span>
-                    <span class="arrow down"></span>
-                </button>
-                <p id="p1" class="displayNone" th:text="${event.description}"></p>
+                <p th:text="'Topic: ' + ${event.topic.name}"></p>
+                <p th:text="${event.description}"></p>
                 <p th:text="'Posted: ' + ${event.date}"></p>
             </div>
             <img class="card-img-bottom" src="https://www.w3schools.com/bootstrap5/img_avatar5.png" alt="Image">
         </div>
-        <script>
-                    document.getElementById("arrowbtn1").onclick = arrow1;
-
-                    const span1 = document.getElementById("span1");
-                    const arrow = document.querySelector(".arrow");
-                    const p1 = document.getElementById("p1");
-
-                    function arrow1() {
-                        span1.style.color = "hsl(238, 29%, 16%)";
-                        if (p1.classList.contains("displayNone")) {
-                            span1.style.fontWeight = "bold";
-                            p1.classList.toggle("displayNone");
-                            arrow.classList.remove("down");
-                            arrow.classList.add("up");
-                        } else {
-                            span1.style.fontWeight = "400";
-                            p1.classList.toggle("displayNone");
-                            arrow.classList.remove("up");
-                            arrow.classList.add("down");
-                        }
-                    }
-        </script>
     </div>
 </div>
 </body>
