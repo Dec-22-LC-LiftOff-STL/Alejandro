@@ -3,17 +3,13 @@ package lifestyle.controllers;
 import lifestyle.data.EventRepository;
 import lifestyle.models.Event;
 import lifestyle.models.EventTopic;
-import lifestyle.models.User;
-import lifestyle.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("events")
@@ -21,12 +17,6 @@ public class EventController {
 
     @Autowired
     private EventRepository eventRepository;
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private AuthenticationController authenticationController;
 
     @GetMapping
     public String displayEvents(Model model) {
@@ -55,7 +45,6 @@ public class EventController {
         return "redirect:";
     }
 
-    // TODO: deleteEvent
     @GetMapping("delete")
     public String deleteEvent(Model model) {
         model.addAttribute("title", "Remove Event");
@@ -63,7 +52,6 @@ public class EventController {
         return "events/delete";
     }
 
-    // TODO: processDeleteEvent
     @PostMapping("delete")
     public String processDeleteEvent(@RequestParam(required = false) int[] eventIds) {
 
