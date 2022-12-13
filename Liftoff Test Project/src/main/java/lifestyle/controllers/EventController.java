@@ -2,18 +2,13 @@ package lifestyle.controllers;
 
 import lifestyle.data.EventRepository;
 import lifestyle.models.Event;
-import lifestyle.models.User;
-import lifestyle.data.UserRepository;
+import lifestyle.models.EventTopic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
@@ -23,16 +18,8 @@ public class EventController {
     @Autowired
     private EventRepository eventRepository;
 
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private AuthenticationController authenticationController;
-
     @GetMapping
-    public String displayEvents(Model model, HttpServletRequest request) {
-        User theUser = authenticationController.getUserFromSession(request.getSession());
-//        model.addAttribute("events", theUser.getEvents());
+    public String displayEvents(Model model) {
         model.addAttribute("events", eventRepository.findAll());
         return "events/index";
     }
@@ -41,6 +28,7 @@ public class EventController {
     public String createEvent(Model model) {
         model.addAttribute("title", "Create history!");
         model.addAttribute(new Event());
+        model.addAttribute("topics", EventTopic.values());
         return "events/create";
     }
 
@@ -49,6 +37,7 @@ public class EventController {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Create history!");
+            // TODO: Remove line below before project demo. Only used for testing.
             model.addAttribute("showErrors", errors.getAllErrors());
             return "events/create";
         }
@@ -56,9 +45,21 @@ public class EventController {
         return "redirect:";
     }
 
-    // TODO: deleteEvent
+    @GetMapping("delete")
+    public String deleteEvent(Model model) {
+        model.addAttribute("title", "Remove Event");
+        model.addAttribute("events", eventRepository.findAll());
+        return "events/delete";
+    }
 
-    // TODO: processDeleteEvent
+    @PostMapping("delete")
+    public String processDeleteEvent(@RequestParam(required = false) int[] eventIds) {
 
-    // TODO: editEvent
+        if (eventIds != null) {
+            for (int id : eventIds) {
+                eventRepository.deleteById(id);
+            }
+        }
+        return "redirect:";
+    }
 }

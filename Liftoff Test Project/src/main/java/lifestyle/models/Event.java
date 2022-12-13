@@ -24,13 +24,17 @@ public class Event extends AbstractEntity {
     @DateTimeFormat
     private LocalDate date = LocalDate.now();
 
+    @NotNull(message = "Topic is required.")
+    private EventTopic topic;
+
     public Event() {
     }
 
-    public Event(String title, String description, User user) {
+    public Event(String title, String description, User user, EventTopic topic) {
         this.title = title;
         this.description = description;
         this.user = user;
+        this.topic = topic;
     }
 
     public String getTitle() {
@@ -63,5 +67,18 @@ public class Event extends AbstractEntity {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public EventTopic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(EventTopic topic) {
+        this.topic = topic;
+    }
+
+    @Override
+    public String toString() {
+        return title;
     }
 }
