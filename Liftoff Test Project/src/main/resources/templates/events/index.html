@@ -10,7 +10,7 @@
 <!--TODO: If we have extra time after MVP achieved, show "Posted: 10 days ago" instead of date-->
 
 <div class="row">
-    <div th:each="event : ${events}" class="col-sm-3" style="height:50px">
+    <div th:each="event : ${events}" class="col-sm-3">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title" th:text="${event.title}"></h4>
