@@ -5,17 +5,36 @@
     <!-- This might scale the page to a mobile device-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--We can change this href to change our tab icon-->
-    <link class="img-rounded" rel="icon" type="image/x-icon" href="https://cdn0.iconfinder.com/data/icons/ios-and-android-apps-icons-fresh-apps-icons/505/health-1024.png">
+    <link th:href="@{/images/journalwhite.png}" rel="icon" class="img-rounded" type="image/icon" >
     <!-- Bootstrap stylesheets and script -->
     <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
     <link th:href="@{/css/liftstyle.css}" rel="stylesheet" />
     <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
     <meta charset="UTF-8">
+    <!--Link for generic icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title th:text="'LiftStyle' + ${title == null ? '' : ' :: ' + title}">LiftStyle</title>
+    <title th:text="'LifeNotes' + ${title == null ? '' : ' :: ' + title}">LifeNotes</title>
 </head>
 
 <body>
+
+<div th:fragment="dropdown-navi">
+    <ul>
+        <li><a href=""><i class="fa fa-home" style="font-size: 24px"></i></a></li>
+        <!--Not ready yet. Link would send you to an "edit profile" page.-->
+        <li><a href=""><i class="fa fa-user" style="font-size: 24px"></i></a></li>
+        <li class="dropdown">
+            <a class="dropbtn"><i class="fa fa-list" style="font-size: 24px"></i></a>
+            <div class="dropdown-content">
+                <a href="/events/create">Add Entry</a>
+                <a href="/events">View Entries</a>
+                <a href="/events/delete">Delete Entries</a>
+                <a href="/logout">Log out</a>
+            </div>
+        </li>
+    </ul>
+</div>
 
 <div th:fragment="nav-list">
     <ul class="nav">
@@ -29,8 +48,8 @@
 
 <!--We can use this to add our logo to any page we want-->
 <div th:fragment="icon">
-    <h4 style="color: green"><img class="img-rounded" src="/icons/journalblue.png"
-             alt="Icon" width="40" height="40">LiftStyle</h4>
+    <h4 style="color: #315b71"><img class="img-rounded" src="/images/journalblue.png"
+             alt="Icon" width="40" height="40">LifeNotes</h4>
 </div>
 
 </body>
