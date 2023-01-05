@@ -10,6 +10,10 @@
 <h1 th:text="'Welcome back, ' + ${name}"></h1>
 <h3>Current Stats</h3>
 
+<!--TODO: Make idea for stats?-->
+<!--TODO: Make topic buttons send user to correct journal page.-->
+<!--TODO: Add more cosmetics to page.-->
+
 <h3>What will you journal today?</h3>
 <div class="topic-button">
     <button class="btn-style-left"><i class="fa fa-cutlery"></i> Diet</button>
@@ -22,7 +26,13 @@
 <div class="topic-button">
     <button class="btn-style-left"><i class="fa fa-heart"></i> Gratitude</button>
     <button class="btn-style-right"><i class="fa fa-list-ul"></i> Other</button>
-</div>
+</div><br>
+
+<p>Want to see what others are posting today?
+    <a href="">
+        <button style="background-color: #315b71; color: white" class="rounded-button btn-btn-secondary" type="submit">View feed</button>
+    </a>
+</p>
 
 </body>
 </html>
