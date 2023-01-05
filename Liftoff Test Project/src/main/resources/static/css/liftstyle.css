@@ -1,19 +1,19 @@
 #right-side-login {
     text-align: center;
-    background-color: #9fdeaf;
-    border-top: 3px solid green;
-    border-right: 3px solid green;
-    border-bottom: 3px solid green;
+    background-color: #315b71;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
 }
 
 #left-side-login {
     text-align: center;
-    border-top: 3px solid green;
-    border-left: 3px solid green;
-    border-bottom: 3px solid green;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
 }
 
-#rounded-button {
+.rounded-button {
     border-radius: 100px;
     width: 125px
 }
@@ -54,8 +54,9 @@ li a, .dropbtn {
   text-decoration: none;
 }
 
-li a:hover, .dropdown:hover, .dropbtn:hover, .btn-style-right:hover, .btn-style-left:hover {
-  background-color: #9fdeaf;
+.btn-style-right:hover, .btn-style-left:hover, .dropdown-content a:hover {
+  background-color: #315b71;
+  color: white;
 }
 
 li.dropdown {
@@ -79,8 +80,26 @@ li.dropdown {
   text-align: left;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
-
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.entry {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.entry-info {
+    float:right;
+    align-items: right;
+    text-align: center;
+}
+
+.entry-img {
+    float: left;
+    width: 40%;
+    margin: 20px;
 }
