@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body class="container body-content">
+<body class="container body-content" style="padding: 10%">
 
-
-<form method="post">
-    <div class="form-group">
-        <label th:for="username">Username
-            <input class="form-control" th:field="${loginFormDTO.username}">
-        </label>
-        <p class="error" th:errors="${loginFormDTO.username}" style="color:red;"></p>
+<div class="d-flex mb-3" style="box-shadow: 2px 10px 40px">
+    <div class="p-2 flex-fill" id="left-side-login">
+        <form method="post">
+            <div style="text:center" th:replace="fragments :: icon"></div>
+            <h3>Log In</h3>
+            <div class="form-group">
+                <label th:for="username">Username
+                    <input class="form-control" th:field="${loginFormDTO.username}">
+                </label>
+                <p class="error" th:errors="${loginFormDTO.username}" style="color:red;"></p>
+            </div>
+            <div class="form-group">
+                <label>Password
+                    <input class="form-control" th:field="${loginFormDTO.password}" type="password">
+                </label>
+                <p class="error" th:errors="${loginFormDTO.password}" style="color:red;"></p>
+            </div>
+            <br>
+            <input type="submit" class="btn btn-success" style="border-radius: 100px; width: 125px;" value="Log In" />
+        </form>
+        <br>
+        <p align="center">Need an account? <a href="/register">Register for one.</a></p>
     </div>
-    <div class="form-group">
-        <label>Password
-            <input class="form-control" th:field="${loginFormDTO.password}" type="password">
-        </label>
-        <p class="error" th:errors="${loginFormDTO.password}" style="color:red;"></p>
+    <div id="right-side-login" class="p-2 flex-fill">
+        <h2 style="padding:15%">Hello Friend!</h2>
+        <p>Enter your details to start<br>your journey with us.</p>
+        <a href="/register">
+            <button id="rounded-button" type="submit" class="btn btn-outline-secondary">Sign Up</button>
+        </a>
     </div>
-    <br>
-    <input type="submit" class="btn btn-success" value="Log In" />
-</form>
-<br>
-<p>Don't have an account? <a href="/register">Register for one.</a></p>
+</div>
 
 </body>
 </html>

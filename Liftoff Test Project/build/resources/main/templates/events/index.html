@@ -4,23 +4,30 @@
 <body>
 <h2 class="text-center">Event Board</h2>
 <nav th:replace="fragments :: nav-list"></nav>
+<link th:href="@{/css/toggle.css}" rel="stylesheet" />
 
 <!--TODO: Make it able for user to add an image-->
 <!--TODO: If we have extra time after MVP achieved, show "Posted: 10 days ago" instead of date-->
 
 <div class="row">
-    <div th:each="event : ${events}" class="col-sm-3" style="height:250px">
+    <div th:each="event : ${events}" class="col-sm-3">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title" th:text="${event.title}"></h4>
-                <p class="card-text" th:text="${event.description}"></p>
-                <a href="/events/edit" class="btn btn-secondary">Edit</a>
+                <p th:text="'Topic: ' + ${event.topic.name}"></p>
+                <p th:text="${event.description}"></p>
                 <p th:text="'Posted: ' + ${event.date}"></p>
             </div>
             <img class="card-img-bottom" src="https://www.w3schools.com/bootstrap5/img_avatar5.png" alt="Image">
+            <div class="rating">
+                <form id="smileys">
+                    <input type="radio" name="smiley" value="sad" class="sad">
+                    <input type="radio" name="smiley" value="neutral" class="neutral">
+                    <input type="radio" name="smiley" value="happy" class="happy">
+                </form>
+            </div>
         </div>
     </div>
 </div>
-
 </body>
 </html>
