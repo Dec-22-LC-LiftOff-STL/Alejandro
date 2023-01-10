@@ -13,6 +13,21 @@
     border-bottom: 3px solid black;
 }
 
+#left-side-register {
+    text-align: center;
+    background-color: #315b71;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+#right-side-register {
+    text-align: center;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
 .rounded-button {
     border-radius: 100px;
     width: 125px
