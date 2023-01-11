@@ -2,25 +2,25 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body>
-<h2 class="text-center">Event Board</h2>
-<nav th:replace="fragments :: nav-list"></nav>
+
+<div th:replace="fragments :: icon"></div>
+<div th:replace="fragments :: dropdown-navi"></div>
+<br>
+
+<h2>Name's Journal</h2>
 <link th:href="@{/css/toggle.css}" rel="stylesheet" />
 
 <!--TODO: Make it able for user to add an image-->
-<!--TODO: If we have extra time after MVP achieved, show "Posted: 10 days ago" instead of date-->
 
-<div class="row">
-    <div th:each="event : ${events}" class="col-sm-3">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title" th:text="${event.title}"></h4>
-                <p th:text="'Topic: ' + ${event.topic.name}"></p>
-                <p th:text="${event.description}"></p>
-                <p th:text="'Posted: ' + ${event.date}"></p>
-            </div>
-            <img class="card-img-bottom" src="https://www.w3schools.com/bootstrap5/img_avatar5.png" alt="Image">
-        </div>
+<div th:each="event : ${events}" class="entry">
+    <img class="entry-img" src="https://www.w3schools.com/bootstrap5/img_avatar5.png" alt="Image">
+    <div class="entry-info col-6">
+        <h1 th:text="${event.title}"></h1>
+        <p th:text="'Topic: ' + ${event.topic.name}"></p>
+        <p th:text="${event.description}"></p>
+        <p th:text="'Posted: ' + ${event.date}"></p>
     </div>
 </div>
+
 </body>
 </html>

@@ -1,19 +1,121 @@
 #right-side-login {
     text-align: center;
-    background-color: #9fdeaf;
-    border-top: 3px solid green;
-    border-right: 3px solid green;
-    border-bottom: 3px solid green;
+    background-color: #315b71;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
 }
 
 #left-side-login {
     text-align: center;
-    border-top: 3px solid green;
-    border-left: 3px solid green;
-    border-bottom: 3px solid green;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
 }
 
-#rounded-button {
+#left-side-register {
+    text-align: center;
+    background-color: #315b71;
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+#right-side-register {
+    text-align: center;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.rounded-button {
     border-radius: 100px;
     width: 125px
+}
+
+.topic-button {
+    padding: 45px 0px 45px 0px;
+}
+
+.btn-style-left {
+    padding: 10px 500px 10px 0px;
+    font-size: 24px;
+    float: left;
+    width: 45%;
+}
+
+.btn-style-right {
+    padding: 10px 500px 10px 0px;
+    font-size: 24px;
+    float: right;
+    width: 45%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: right;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.btn-style-right:hover, .btn-style-left:hover, .dropdown-content a:hover {
+  background-color: #315b71;
+  color: white;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.entry {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    margin: 0px 20px 20px 20px;
+    padding: 20px;
+}
+
+.entry-info {
+    float:right;
+    align-items: right;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.entry-img {
+    float: left;
+    width: 40%;
+    margin: 20px;
 }

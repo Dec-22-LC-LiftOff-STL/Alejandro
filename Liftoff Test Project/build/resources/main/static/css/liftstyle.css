@@ -1,0 +1,19 @@
+#right-side-login {
+    text-align: center;
+    background-color: #9fdeaf;
+    border-top: 3px solid green;
+    border-right: 3px solid green;
+    border-bottom: 3px solid green;
+}
+
+#left-side-login {
+    text-align: center;
+    border-top: 3px solid green;
+    border-left: 3px solid green;
+    border-bottom: 3px solid green;
+}
+
+#rounded-button {
+    border-radius: 100px;
+    width: 125px
+}
