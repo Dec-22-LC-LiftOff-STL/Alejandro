@@ -24,7 +24,7 @@ public class AuthenticationFilter extends HandlerInterceptorAdapter {
 
 
     // Creating a whitelist of items NOT subject to restrictions - pages anyone can access regardless of login status.
-    private static final List<String> whitelist = Arrays.asList("/login", "/register", "/logout", "/css");
+    private static final List<String> whitelist = Arrays.asList("/login", "/register", "/logout", "/css", "/images");
 
     // method to check whether a given request is whitelisted.
     private static boolean isWhitelisted(String path) {
