@@ -103,7 +103,7 @@ li.dropdown {
     border: 1px solid black;
     border-radius: 5px;
     display: flex;
-    margin-bottom: 20px;
+    margin: 0px 20px 20px 20px;
     padding: 20px;
 }
 
@@ -111,6 +111,7 @@ li.dropdown {
     float:right;
     align-items: right;
     text-align: center;
+    margin-top: 10%;
 }
 
 .entry-img {
