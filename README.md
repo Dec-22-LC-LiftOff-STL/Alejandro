@@ -1,7 +1,6 @@
 <h1># Alejandro<br>
 Repo For TA Alejandro's Student to access for resources, and projects</h1>
-<h2> LiftOff + LifeStyle = LiftStyle</h2>
-
+<h2> LifeNotes: Java Journaling Project</h2>
 
 <h3>MySQL database setup:</h3>
 <p>In MySQL workbench make a new schema called <code>liftstyle</code><br>
