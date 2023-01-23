@@ -39,7 +39,7 @@
     color:#ccc;
 }
 .rate:not(:checked) > label:before {
-    content: url("http://i.imgur.com/1dT6Fai.png") ' ';
+    content: &star;
 }
 .rate > input:checked ~ label {
     color: #ffc700;
