@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body class="container">
+<header>
+    <div th:replace="fragments :: icon" align="left"></div>
+    <div th:replace="fragments :: dropdown-navi" align="right"></div>
+</header><br>
+<body>
 
-<h2 align="center">Create some history!</h2>
-<nav th:replace="fragments :: nav-list"></nav>
+<h2 align="left">Create some history!</h2>
 
 <form method="post" align="center">
-    <div class="form-group">
-        <input placeholder="Enter Title" th:field="${event.title}">
-    </div>
+    <div class="cdForm">
+        <div>
+            <input placeholder="Enter Title" th:field="${event.title}" style="float:left">
+            <label>Topic
+                <select th:field="${event.topic}">
+                    <option th:each="topic : ${topics}"
+                            th:value="${topic}"
+                            th:text="${topic.name}"
+                    ></option>
+                </select>
+            </label>
+        </div><br>
 
-    <div class="form-group">
-        <input placeholder="Enter Description" th:field="${event.description}">
+        <textarea cols="60" rows="10" placeholder="Enter Description"
+                  th:field="${event.description}" style="float: left"></textarea>
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <input type="submit" class="btn btn-primary" style="float: left">
     </div>
-
-    <div class="form-group">
-        <label>Topic</label>
-        <select th:field="${event.topic}">
-            <option th:each="topic : ${topics}"
-                    th:value="${topic}"
-                    th:text="${topic.name}"
-            ></option>
-        </select>
-    </div>
-
-    <div>
-        <input type="submit" class="btn btn-primary">
-    </div>
-
-    <tr th:each="error : ${showErrors}">
-        <td th:text="${error}"></td>
-    </tr>
 </form>
 
 </body>

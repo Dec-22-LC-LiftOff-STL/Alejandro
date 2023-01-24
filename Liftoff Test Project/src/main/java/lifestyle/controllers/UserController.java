@@ -20,4 +20,10 @@ public class UserController {
         model.addAttribute("name", theUser.getUsername());
         return "index";
     }
+
+    @GetMapping("/profile")
+    public String editProfile() {
+        // TODO: Update so user can add profile picture and edit any profile information.
+        return "profile";
+    }
 }
