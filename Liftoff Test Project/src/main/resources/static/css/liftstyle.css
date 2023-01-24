@@ -119,3 +119,21 @@ li.dropdown {
     width: 40%;
     margin: 20px;
 }
+
+#desc {
+    float: left;
+    width: 400px;
+    height: 200px;
+}
+
+.cdForm {
+    padding: 10%;
+}
+
+.not-ready {
+    width: 50%;
+    height: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
