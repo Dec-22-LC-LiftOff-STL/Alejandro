@@ -6,6 +6,7 @@
 <nav th:replace="fragments :: nav-list"></nav>
 <link th:href="@{/css/toggle.css}" rel="stylesheet" />
 <link rel="stylesheet" href="liftstyle.css">
+<link rel="stylesheet" href="notification.css">
 
 <!--TODO: Make it able for user to add an image-->
 <!--TODO: If we have extra time after MVP achieved, show "Posted: 10 days ago" instead of date-->
@@ -20,6 +21,7 @@
                 <p th:text="'Posted: ' + ${event.date}"></p>
             </div>
             <img class="card-img-bottom" src="https://www.w3schools.com/bootstrap5/img_avatar5.png" alt="Image">
+
             <div class="rate">
                 <input type="radio" id="star5" name="rate" value="5" />
                 <label for="star5" title="text">☆</label>
@@ -32,6 +34,7 @@
                 <input type="radio" id="star1" name="rate" value="1" />
                 <label for="star1" title="text">☆</label>
             </div>
+
         </div>
     </div>
 </div>
